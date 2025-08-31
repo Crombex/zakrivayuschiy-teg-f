@@ -44,9 +44,9 @@
   justify-content: center;
   align-items: center;
   margin: 100px auto;
-  border: var(--main-border);
+  border: var(--main-border, 2px solid #000);
   font-family: var(--accent-font, 'PressStart2P');
-  background-color: var(--light-accent-color);
+  background-color: var(--light-accent-color, #fff);
   block-size: clamp(20.438rem, 19.535rem + 3.85vw, 23rem);
   inline-size: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
 }
@@ -55,7 +55,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--size-m);
+  gap: var(--size-m, 18px);
 }
 
 .header__logo {
@@ -78,9 +78,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--size-xl);
-  border: var(--main-border);
-  background-color: var(--light-accent-color);
+  gap: var(--size-xl, 25px);
+  border: var(--main-border, 2px solid #000);
+  background-color: var(--light-accent-color, #fff);
   inline-size: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
 }
 
@@ -115,7 +115,7 @@
 .card__heading {
   margin: 4px 10px -21px;
   padding-block-start: 1px;
-  font-size: var(--size-m);
+  font-size: var(--size-m, 18px);
   font-variation-settings: 'wght' 715;
 }
 
@@ -133,38 +133,38 @@
 .label {
   position: absolute;
   top: 30px;
-  right: var(--size-xl);
+  right: var(--size-xl, 25px);
   opacity: 0.5;
   font-family: var(--accent-font, 'PressStart2P');
-  font-size: var(--size-s);
+  font-size: var(--size-s, 14px);
   text-shadow: 
-    0 -1px 0 var(--light-accent-color),
-    1px 0 0 var(--light-accent-color),
-    0 1px 0 var(--light-accent-color),
-    -1px 0 0 var(--light-accent-color);
+    0 -1px 0 var(--light-accent-color, #fff),
+    1px 0 0 var(--light-accent-color, #fff),
+    0 1px 0 var(--light-accent-color, #fff),
+    -1px 0 0 var(--light-accent-color, #fff);
   mix-blend-mode: hard-light;
 }
 
-@supports (text-stroke: 1px var(--light-accent-color)) or (-webkit-text-stroke: 1px var(--light-accent-color)) {
+@supports (text-stroke: 1px var(--light-accent-color, #fff)) or (-webkit-text-stroke: 1px var(--light-accent-color, #fff)) {
   .label {
-    -webkit-text-stroke: 0.2px var(--light-accent-color);
-    text-stroke: 0.2px var(--light-accent-color);
+    -webkit-text-stroke: 0.2px var(--light-accent-color, #fff);
+    text-stroke: 0.2px var(--light-accent-color, #fff);
   }
 }
 
 .card__text{
   display: flex;
   flex-direction: column;
-  gap: var(--size-xl);
-  margin-inline-start: var(--size-xl);
-  margin-inline-end: var(--size-xl);
-  font-size: var(--size-m);
+  gap: var(--size-xl, 25px);
+  margin-inline-start: var(--size-xl, 25px);
+  margin-inline-end: var(--size-xl, 25px);
+  font-size: var(--size-m, 18px);
 }
 
 .card__actions {
   display: flex;
   align-self: self-end;
-  margin: -4px var(--size-xl) var(--size-xl);
+  margin: -4px var(--size-xl, 25px) var(--size-xl, 25px);
   inline-size: min-content;
 }
 
@@ -183,26 +183,26 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: var(--main-border);
+  outline: var(--main-border, 2px solid #000);
 }
 
 .card__icon-button:hover .core {
-  fill: var(--dark-accent-color);
+  fill: var(--dark-accent-color, #000);
   transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body {
-  fill: var(--dark-accent-color);
+  fill: var(--dark-accent-color, #000);
   transition: fill 0.3s linear 0.05s;
 }
 
 .card__icon-button:active .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear 0.05s;
 }
 
@@ -211,17 +211,17 @@
 }
 
 .like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body{
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #f00);
   transition: fill 0.3s linear 0.06s;
 }
 
@@ -246,8 +246,8 @@
   align-items: center;
   gap: 8px;
   margin: 45px auto 100px;
-  padding: 17px var(--size-s);
-  background-color: var(--light-accent-color);
+  padding: 17px var(--size-s, 14px);
+  background-color: var(--light-accent-color, #fff);
   inline-size: clamp(19.375rem, 18.803rem + 2.44vw, 21rem);
 }
 
@@ -255,7 +255,7 @@
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  color: var(--light-accent-color);
+  color: var(--light-accent-color, #fff);
   mix-blend-mode: difference;
   inline-size: 28px;
   block-size: 28px;
@@ -268,9 +268,9 @@
 .button__text {
   position: relative;
   z-index: 1;
-  color: var(--light-accent-color);
-  font-family: var(--accent-font);
-  font-size: var(--size-s);
+  color: var(--light-accent-color, #fff);
+  font-family: var(--accent-font, 'PressStart2P');
+  font-size: var(--size-s, 14px);
   mix-blend-mode: difference;
 }
 
@@ -280,9 +280,8 @@
   align-items: center;
   gap: 30px;
   margin: auto;
-  border: var(--main-border);
+  border: var(--main-border, 2px solid #000);
   padding: 30px 36px;
-  min-inline-size: 341px;
   inline-size: clamp(21.313rem, 21.048rem + 1.13vw, 22.063rem);
 }
 
@@ -291,13 +290,14 @@
 }
 
 .page:has(.dialog[open]) {
-  overflow: hidden;
+  overflow-block: hidden;
+  padding-right: 15px;
 }
 
 .dialog__info {
   display: flex;
   align-items: center;
-  gap: var(--size-l);
+  gap: var(--size-l, 25px);
 }
 
 .info-text {
@@ -313,7 +313,7 @@
 .button {
   position: relative;
   overflow: hidden;
-  background-color: var(--light-accent-color);
+  background-color: var(--light-accent-color, #fff);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
@@ -323,7 +323,7 @@
   position: absolute;
   inset: 0;
   height: 100%;
-  background-color: var(--dark-accent-color);
+  background-color: var(--dark-accent-color, #000);
   transition: transform 0.5s ease-in-out;
   transform: translateX(-100%);
   inline-size: 100%;
@@ -334,7 +334,7 @@
 }
 
 .button:focus-visible{
-  box-shadow: 2px 2px 0 var(--dark-accent-color);
+  box-shadow: 2px 2px 0 var(--dark-accent-color, #000);
 }
 
 .button:hover::after {
@@ -381,7 +381,7 @@
   }
 
   .card__actions {
-    margin: 5px var(--size-xl) var(--size-l);
+    margin: 5px var(--size-xl, 25px) var(--size-l, 20px);
   }
 }
 
