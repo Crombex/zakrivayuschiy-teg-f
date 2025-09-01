@@ -165,6 +165,7 @@
 .card__actions {
   display: flex;
   align-items: center;
+  gap: 1px;
   align-self: self-end;
   margin: 0 var(--size-xl, 25px) var(--size-xl, 25px);
   inline-size: min-content;
@@ -175,18 +176,18 @@
   justify-content: center;
   align-items: center;
   border: none;
-  outline: 2px solid transparent;
   outline-offset: -2px;
-  transition: outline 0.3s ease;
   cursor: pointer;
 }
 
-.card__icon-button:focus {
+.card__icon-button:focus,
+.card__icon-button:focus-visible {
   outline: none;
 }
 
-.card__icon-button:focus-visible {
+.card__icon-button:focus-visible .like-icon{
   outline: var(--main-border, 2px solid #000);
+  outline-offset: -1px;
 }
 
 .card__icon-button:hover .core {
@@ -211,6 +212,11 @@
 
 .heart {
   transform-origin: center;
+}
+
+.like-icon {
+  outline: 2px solid transparent;
+  transition: outline 0.3s ease;
 }
 
 .like-icon.is-liked .core {
